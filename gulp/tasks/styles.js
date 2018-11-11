@@ -15,7 +15,7 @@ gulp.task('styles', () => {
 			nestedcss,
 			autoprefixer
 		]))
-		.on('error', (error) => {
+		.on('error', function(error) {
 			console.log(error.toString());
 			this.emit('end');
 		})
