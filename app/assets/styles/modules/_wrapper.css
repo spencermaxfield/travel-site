@@ -18,7 +18,14 @@
 		}
 	}
 
+	&--no-padding-until-medium {
+		padding-left: 0;
+		padding-right: 0;
 
+		@mixin atMedium {
+			padding: 0 18px;
+		}
+	}
 
 	.wrapper {
 		padding-left: 0;
