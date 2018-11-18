@@ -5,6 +5,7 @@ var nestedcss = require('postcss-nested');
 var cssImport = require('postcss-import');
 var autoprefixer = require('autoprefixer');
 var mixins = require('postcss-mixins');
+var hexRgba = require('postcss-hexrgba');
 
 gulp.task('styles', () => {
 	return gulp.src('./app/assets/styles/styles.css')
@@ -13,6 +14,7 @@ gulp.task('styles', () => {
 			mixins,
 			cssvars,
 			nestedcss,
+			hexRgba,
 			autoprefixer
 		]))
 		.on('error', function(error) {
