@@ -4,6 +4,7 @@ export default class MobileMenu {
 	constructor() {
 		this.$menuIcon = $('.site-header__menu-icon');
 		this.$menuContent = $('.site-header__menu-content');
+		this.$siteHeader = $('.site-header');
 		this.registerListeners();
 	}
 
@@ -13,6 +14,6 @@ export default class MobileMenu {
 
 	toggleMenu = () => {
 		this.$menuContent.toggleClass('site-header__menu-content--is-visible');
-		console.log('toggling');
+		this.$siteHeader.toggleClass('site-header--is-expanded');
 	}
 }
