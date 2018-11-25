@@ -40,15 +40,56 @@
 
 	&__menu-icon {
 		width: 20px;
-		height: 20px;
-		background-color: white;
+		height: 19px;
 		position: absolute;
 		top: 10px;
 		right: 10px;
 		z-index: 1000;
 
+		&::before, &__middle, &::after {
+			position: absolute;
+			width: 20px;
+			height: 3px;
+			background-color: white;
+			left: 0;
+			transition: transform .3s ease-out;
+		}
+
+		&::before {
+			top: 0;
+			content: "";
+			transform-origin: 0 0;
+		}
+
+		&__middle {
+			top: 8px;
+			transition: all .3s ease-out;
+			transform-origin: 0 50%;
+		}
+
+		&::after {
+			bottom: 0;
+			content: "";
+			transform-origin: 0 100%;
+		}
+
 		@mixin atMedium {
 			display: none;
+		}
+
+		&--close-x {
+			&::before {
+				transform: rotate(45deg) scaleX(1.25);
+			}
+
+			&::after {
+				transform: rotate(-45deg) scaleX(1.25) translateY(1px);
+			}
+
+			.site-header__menu-icon__middle {
+				opacity: 0;
+				transform: scaleX(0);
+			}
 		}
 	}
 
