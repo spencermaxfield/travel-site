@@ -1,5 +1,7 @@
 import MobileMenu from './modules/MobileMenu';
 import RevealOnScroll from './modules/RevealOnScroll';
+import $ from 'jquery';
 
 let mobileMenu = new MobileMenu();
-let revealOnScroll = new RevealOnScroll();
+let featuresRevealOnScroll = new RevealOnScroll($('.feature-item'), '85%');
+let testimonialsRevealOnScroll = new RevealOnScroll($('.testimonial'), '60%');
