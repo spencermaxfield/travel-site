@@ -11,6 +11,11 @@ gulp.task('beginClean', function() {
 gulp.task('createSprite', ['beginClean'], function() {
 	return gulp.src('./app/assets/images/icons/**/*.svg')
 		.pipe(svgSprite({
+			shape: {
+				spacing: {
+					padding: 1
+				}
+			},
 			mode: {
 				css: {
 					variables: {
